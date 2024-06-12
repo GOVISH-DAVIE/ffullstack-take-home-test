@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  /* background-color: #cffafa30; */
+  font-family: 'mulish';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
