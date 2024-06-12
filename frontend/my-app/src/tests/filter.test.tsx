@@ -7,9 +7,24 @@ import React from 'react';
 
 // Mocking the Book interface
 const mockBooks: Book[] = [
-    { title: 'Harry Potter', author: '', coverPhotoURL: '', readingLevel: '' },
-    { title: 'Lord of the Rings', author: '', coverPhotoURL: '', readingLevel: '' },
-  ];
+    {
+        author: "Reese Smith",
+        coverPhotoURL: "assets/image2.webp",
+        readingLevel: "H",
+        title: "Curious Princess and the Enchanted Garden"
+      },
+      {
+        author: "Jordan Jones",
+        coverPhotoURL: "assets/image10.webp",
+        readingLevel: "I",
+        title: "Clever Monster on the Wonder Island"
+      },
+      {
+        author: "Quinn Brown",
+        coverPhotoURL: "assets/image10.webp",
+        readingLevel: "I",
+        title: "Happy Knight and the Magic Spell"
+      } ];
   
   describe('useFilter Hook', () => {
     let mockSetFilter: jest.Mock;
@@ -62,16 +77,31 @@ const mockBooks: Book[] = [
       const { result } = renderHook(() => useFilter());
   
       act(() => {
-        result.current.search('Harry', mockBooks);
+        result.current.search('Clever', mockBooks);
       });
   
-      expect(mockSetBooks).toHaveBeenCalledWith([{ title: 'Harry Potter', author: '', coverPhotoURL: '', readingLevel: '' }]);
+      expect(mockSetBooks).toHaveBeenCalledWith([
+       
+          {
+            author: "Jordan Jones",
+            coverPhotoURL: "assets/image10.webp",
+            readingLevel: "I",
+            title: "Clever Monster on the Wonder Island"
+          }
+      ]);
   
       act(() => {
-        result.current.search('Lord', mockBooks);
+        result.current.search('Cur', mockBooks);
       });
   
-      expect(mockSetBooks).toHaveBeenCalledWith([{ title: 'Lord of the Rings', author: '', coverPhotoURL: '', readingLevel: '' }]);
+      expect(mockSetBooks).toHaveBeenCalledWith([
+        {
+            author: "Reese Smith",
+            coverPhotoURL: "assets/image2.webp",
+            readingLevel: "H",
+            title: "Curious Princess and the Enchanted Garden"
+          }
+      ]);
     });
   
     it('should set books to empty array if search is empty', () => {

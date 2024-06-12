@@ -18,7 +18,24 @@ describe('useStudentListContext', () => {
   it('should return context when used within StudentListProvider', () => {
     const mockSetStudents = jest.fn();
     const mockContext = {
-      students: ['Student1', 'Student2'],
+      students: [      {
+        "author": "Reese Smith",
+        "coverPhotoURL": "assets/image2.webp",
+        "readingLevel": "H",
+        "title": "Curious Princess and the Enchanted Garden"
+      },
+      {
+        "author": "Jordan Jones",
+        "coverPhotoURL": "assets/image10.webp",
+        "readingLevel": "I",
+        "title": "Clever Monster on the Wonder Island"
+      },
+      {
+        "author": "Quinn Brown",
+        "coverPhotoURL": "assets/image10.webp",
+        "readingLevel": "I",
+        "title": "Happy Knight and the Magic Spell"
+      }],
       setStudents: mockSetStudents,
     };
 
